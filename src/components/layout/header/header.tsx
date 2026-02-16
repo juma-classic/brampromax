@@ -170,7 +170,7 @@ const AppHeader = observer(() => {
                         tertiary
                         onClick={() => {
                             window.location.replace(
-                                'https://oauth.deriv.com/oauth2/authorize?app_id=125428&l=EN&brand=bram-fx'
+                                'https://oauth.deriv.com/oauth2/authorize?app_id=80836&l=EN&brand=bram-fx'
                             );
                         }}
                     >
