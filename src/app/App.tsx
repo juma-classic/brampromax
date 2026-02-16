@@ -1,8 +1,9 @@
 import { initSurvicate } from '../public-path';
-import { lazy, Suspense, useEffect } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 import ChunkLoader from '@/components/loader/chunk-loader';
 import RoutePromptDialog from '@/components/route-prompt-dialog';
+import { CommunityModal } from '@/components/community-modal';
 import { StoreProvider } from '@/hooks/useStore';
 import CallbackPage from '@/pages/callback';
 import Endpoint from '@/pages/endpoint';
@@ -147,6 +148,8 @@ const router = createBrowserRouter(
 );
 
 function App() {
+    const [showCommunityModal, setShowCommunityModal] = useState(false);
+
     useEffect(() => {
         // Initialize analytics manager early
         analyticsManager.initialize().catch(console.error);
@@ -160,7 +163,19 @@ function App() {
         // Initialize anti-inspection protection (production only)
         initAntiInspect();
 
+        // Show community modal after a delay (after loader finishes)
+        const modalTimer = setTimeout(() => {
+            const lastDismissed = localStorage.getItem('community_modal_dismissed');
+            const oneDayInMs = 24 * 60 * 60 * 1000;
+            
+            // Show modal if never dismissed or dismissed more than 24 hours ago
+            if (!lastDismissed || Date.now() - parseInt(lastDismissed) > oneDayInMs) {
+                setShowCommunityModal(true);
+            }
+        }, 2000); // Show 2 seconds after app loads
+
         return () => {
+            clearTimeout(modalTimer);
             const survicateBox = document.getElementById('survicate-box');
             if (survicateBox) {
                 survicateBox.style.display = 'none';
@@ -242,6 +257,7 @@ function App() {
             <RouterProvider router={router} />
             <Analytics />
             <SpeedInsights />
+            {showCommunityModal && <CommunityModal onClose={() => setShowCommunityModal(false)} />}
         </>
     );
 }
