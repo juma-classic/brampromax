@@ -102,7 +102,7 @@ git push
 
 ## File Location
 ```
-Novaprime/
+BRAM-FX/
 ├── public/
 │   └── premium-whitelist.json  ← Edit this file
 ```

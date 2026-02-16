@@ -3102,33 +3102,9 @@ const AppWrapper = observer(() => {
                                         flexShrink: 0,
                                     }}
                                 >
-                                    {/* YouTube */}
-                                    <a
-                                        href='https://www.youtube.com/@bonniemurigi'
-                                        target='_blank'
-                                        rel='noopener noreferrer'
-                                        style={{
-                                            width: '40px',
-                                            height: '40px',
-                                            borderRadius: '50%',
-                                            background: '#FF0000',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            textDecoration: 'none',
-                                            transition: 'transform 0.2s ease',
-                                        }}
-                                        onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.1)')}
-                                        onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
-                                    >
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                                        </svg>
-                                    </a>
-                                    
                                     {/* Instagram */}
                                     <a
-                                        href='https://www.instagram.com/bonnie_binary?igsh=cHAwNGJiNXoxNGo='
+                                        href='https://www.instagram.com/bramfx.site?igsh=MW85cHZyMWd5OWg0Mw=='
                                         target='_blank'
                                         rel='noopener noreferrer'
                                         style={{
@@ -3150,16 +3126,16 @@ const AppWrapper = observer(() => {
                                         </svg>
                                     </a>
                                     
-                                    {/* WhatsApp */}
+                                    {/* WhatsApp Group */}
                                     <a
-                                        href='https://wa.me/254799094649'
+                                        href='https://chat.whatsapp.com/JouzjTwJ25c4wnKoz4Wzbf'
                                         target='_blank'
                                         rel='noopener noreferrer'
                                         style={{
                                             width: '40px',
                                             height: '40px',
                                             borderRadius: '50%',
-                                            background: '#25D366',
+                                            background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)',
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'center',
@@ -3170,13 +3146,37 @@ const AppWrapper = observer(() => {
                                         onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
                                     >
                                         <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                        </svg>
+                                    </a>
+                                    
+                                    {/* WhatsApp Direct */}
+                                    <a
+                                        href='https://wa.me/254114400233'
+                                        target='_blank'
+                                        rel='noopener noreferrer'
+                                        style={{
+                                            width: '40px',
+                                            height: '40px',
+                                            borderRadius: '50%',
+                                            background: '#128C7E',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            textDecoration: 'none',
+                                            transition: 'transform 0.2s ease',
+                                        }}
+                                        onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.1)')}
+                                        onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
+                                    >
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2C6.48 2 2 6.48 2 12c0 1.54.36 3 .97 4.29L2 22l5.71-.97C9 21.64 10.46 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.38 0-2.67-.33-3.82-.91l-.27-.16-2.84.48.48-2.84-.16-.27C4.83 14.67 4.5 13.38 4.5 12c0-4.14 3.36-7.5 7.5-7.5s7.5 3.36 7.5 7.5-3.36 7.5-7.5 7.5zm4.5-5.85c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.42 1.41.54.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.17-.48-.29z"/>
                                         </svg>
                                     </a>
                                     
                                     {/* TikTok */}
                                     <a
-                                        href='https://tiktok.com/@bonniemurigi'
+                                        href='https://www.tiktok.com/@ceobram'
                                         target='_blank'
                                         rel='noopener noreferrer'
                                         style={{
@@ -3198,16 +3198,16 @@ const AppWrapper = observer(() => {
                                         </svg>
                                     </a>
                                     
-                                    {/* Telegram */}
+                                    {/* Email */}
                                     <a
-                                        href='https://t.me/Binovate'
+                                        href='mailto:bramfx61@gmail.com'
                                         target='_blank'
                                         rel='noopener noreferrer'
                                         style={{
                                             width: '40px',
                                             height: '40px',
                                             borderRadius: '50%',
-                                            background: '#0088cc',
+                                            background: '#EA4335',
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'center',
@@ -3217,10 +3217,12 @@ const AppWrapper = observer(() => {
                                         onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.1)')}
                                         onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
                                     >
-                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                                         </svg>
                                     </a>
+                                    
+                                    {/* Telegram - Removed (no link provided) */}
                                 </div>
 
                                 {/* FREE BOTS SECTION */}
@@ -4568,6 +4570,68 @@ const AppWrapper = observer(() => {
                                         border: 'none',
                                         display: 'block',
                                     }}
+                                />
+                            </div>
+                        </div>
+
+                        {/* ADVANCE ANALYSIS TAB */}
+                        <div
+                            label={
+                                <>
+                                    <svg
+                                        width='31.2'
+                                        height='31.2'
+                                        viewBox='0 0 24 24'
+                                        fill='none'
+                                        xmlns='http://www.w3.org/2000/svg'
+                                    >
+                                        <defs>
+                                            <linearGradient id='advanceGrad' x1='0%' y1='0%' x2='100%' y2='100%'>
+                                                <stop offset='0%' stopColor='#3b82f6' />
+                                                <stop offset='100%' stopColor='#8b5cf6' />
+                                            </linearGradient>
+                                        </defs>
+                                        <path
+                                            d='M3 3v18h18'
+                                            stroke='url(#advanceGrad)'
+                                            strokeWidth='2'
+                                            strokeLinecap='round'
+                                        />
+                                        <path
+                                            d='M7 14l4-4 3 3 5-5'
+                                            stroke='url(#advanceGrad)'
+                                            strokeWidth='2'
+                                            strokeLinecap='round'
+                                            strokeLinejoin='round'
+                                        />
+                                        <circle cx='7' cy='14' r='1.5' fill='#3b82f6' />
+                                        <circle cx='11' cy='10' r='1.5' fill='#6366f1' />
+                                        <circle cx='14' cy='13' r='1.5' fill='#8b5cf6' />
+                                        <circle cx='19' cy='8' r='1.5' fill='#a855f7' />
+                                    </svg>
+                                    <Localize i18n_default_text='Advance Analysis' />
+                                </>
+                            }
+                            id='id-advance-analysis'
+                        >
+                            <div
+                                style={{
+                                    width: '100%',
+                                    height: 'calc(100vh - 120px)',
+                                    minHeight: 'calc(100vh - 120px)',
+                                    overflow: 'hidden',
+                                }}
+                            >
+                                <iframe
+                                    src='https://bot-analysis-tool-belex.web.app'
+                                    title='Advance Analysis Tool'
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        border: 'none',
+                                        display: 'block',
+                                    }}
+                                    allow='clipboard-read; clipboard-write'
                                 />
                             </div>
                         </div>
