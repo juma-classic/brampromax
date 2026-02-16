@@ -3266,100 +3266,90 @@ const AppWrapper = observer(() => {
                                                 
                                                 // Return animated SVG based on bot name
                                                 if (lowerName.includes('d strike') || lowerName.includes('strike')) {
-                                                    // Black Panther kinetic energy / Vibranium inspired
+                                                    // Doctor Strange Mystical Strike Mandala
                                                     return (
                                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <defs>
                                                                 <linearGradient id={`strikeGrad${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                                                                    <stop offset="0%" stopColor="#a855f7" />
-                                                                    <stop offset="50%" stopColor="#7c3aed" />
-                                                                    <stop offset="100%" stopColor="#6366f1" />
+                                                                    <stop offset="0%" stopColor="#fbbf24" />
+                                                                    <stop offset="50%" stopColor="#f97316" />
+                                                                    <stop offset="100%" stopColor="#d97706" />
                                                                 </linearGradient>
                                                                 <radialGradient id={`strikeRadial${index}`}>
-                                                                    <stop offset="0%" stopColor="#c4b5fd" stopOpacity="0.8" />
-                                                                    <stop offset="100%" stopColor="#7c3aed" stopOpacity="0" />
+                                                                    <stop offset="0%" stopColor="#fbbf24" stopOpacity="0.6" />
+                                                                    <stop offset="100%" stopColor="#f97316" stopOpacity="0" />
                                                                 </radialGradient>
                                                             </defs>
                                                             
-                                                            {/* Kinetic energy field */}
+                                                            {/* Mystical energy glow */}
                                                             <circle cx="24" cy="24" r="20" fill={`url(#strikeRadial${index})`}>
-                                                                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite" />
+                                                                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite" />
                                                             </circle>
                                                             
-                                                            {/* Outer vibranium ring */}
-                                                            <circle cx="24" cy="24" r="19" stroke={`url(#strikeGrad${index})`} strokeWidth="2" fill="none" opacity="0.6">
-                                                                <animate attributeName="r" values="19;20;19" dur="3s" repeatCount="indefinite" />
+                                                            {/* Outer hexagonal rune circle */}
+                                                            <path d="M24 4 L38 12 L38 28 L24 36 L10 28 L10 12 Z" stroke={`url(#strikeGrad${index})`} strokeWidth="2" fill="none" opacity="0.7">
+                                                                <animateTransform attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="12s" repeatCount="indefinite" />
+                                                            </path>
+                                                            
+                                                            {/* Inner rotating mandala rings */}
+                                                            <circle cx="24" cy="24" r="16" stroke={`url(#strikeGrad${index})`} strokeWidth="1.5" fill="none" strokeDasharray="4 2" opacity="0.8">
+                                                                <animateTransform attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="6s" repeatCount="indefinite" />
+                                                            </circle>
+                                                            <circle cx="24" cy="24" r="13" stroke={`url(#strikeGrad${index})`} strokeWidth="1.5" fill="none" strokeDasharray="3 3" opacity="0.6">
+                                                                <animateTransform attributeName="transform" type="rotate" from="360 24 24" to="0 24 24" dur="4s" repeatCount="indefinite" />
                                                             </circle>
                                                             
-                                                            {/* Energy pulse rings */}
-                                                            <circle cx="24" cy="24" r="16" stroke={`url(#strikeGrad${index})`} strokeWidth="1.5" fill="none" strokeDasharray="6 3">
-                                                                <animateTransform attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="4s" repeatCount="indefinite" />
-                                                                <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" />
-                                                            </circle>
-                                                            <circle cx="24" cy="24" r="13" stroke={`url(#strikeGrad${index})`} strokeWidth="1.5" fill="none" strokeDasharray="4 2">
-                                                                <animateTransform attributeName="transform" type="rotate" from="360 24 24" to="0 24 24" dur="3s" repeatCount="indefinite" />
-                                                                <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" begin="0.5s" repeatCount="indefinite" />
-                                                            </circle>
-                                                            
-                                                            {/* Panther claw marks / Strike pattern */}
-                                                            <g opacity="0.8">
-                                                                <path d="M18 12 L20 16 L18 20" stroke={`url(#strikeGrad${index})`} strokeWidth="2" strokeLinecap="round">
-                                                                    <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" repeatCount="indefinite" />
-                                                                </path>
-                                                                <path d="M24 10 L24 18" stroke={`url(#strikeGrad${index})`} strokeWidth="2" strokeLinecap="round">
-                                                                    <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" begin="0.2s" repeatCount="indefinite" />
-                                                                </path>
-                                                                <path d="M30 12 L28 16 L30 20" stroke={`url(#strikeGrad${index})`} strokeWidth="2" strokeLinecap="round">
-                                                                    <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" begin="0.4s" repeatCount="indefinite" />
-                                                                </path>
-                                                            </g>
-                                                            
-                                                            {/* Central vibranium core with D shape */}
-                                                            <g>
-                                                                <path d="M18 18 L18 30 L24 30 C27 30 29 28 29 24 C29 20 27 18 24 18 Z" 
-                                                                    fill={`url(#strikeGrad${index})`}
-                                                                >
-                                                                    <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" />
-                                                                </path>
-                                                                <path d="M20 20 L20 28 L24 28 C26 28 27 26.5 27 24 C27 21.5 26 20 24 20 Z" 
-                                                                    fill="none" 
-                                                                    stroke="#fff" 
-                                                                    strokeWidth="1"
-                                                                >
+                                                            {/* Sacred geometry - Strike symbol */}
+                                                            <g opacity="0.9">
+                                                                <path d="M24 12 L28 24 L24 36" stroke={`url(#strikeGrad${index})`} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                                                                     <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" />
                                                                 </path>
+                                                                <path d="M20 12 L16 24 L20 36" stroke={`url(#strikeGrad${index})`} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                                                    <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="0.3s" repeatCount="indefinite" />
+                                                                </path>
+                                                                <line x1="14" y1="24" x2="34" y2="24" stroke={`url(#strikeGrad${index})`} strokeWidth="2" strokeLinecap="round">
+                                                                    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" begin="0.6s" repeatCount="indefinite" />
+                                                                </line>
                                                             </g>
                                                             
-                                                            {/* Energy particles */}
-                                                            <circle cx="12" cy="24" r="1.5" fill={`url(#strikeGrad${index})`}>
-                                                                <animate attributeName="cx" values="12;36;12" dur="3s" repeatCount="indefinite" />
-                                                                <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" />
+                                                            {/* Central mystical core */}
+                                                            <circle cx="24" cy="24" r="6" fill={`url(#strikeGrad${index})`} opacity="0.8">
+                                                                <animate attributeName="r" values="6;7;6" dur="2s" repeatCount="indefinite" />
                                                             </circle>
-                                                            <circle cx="24" cy="12" r="1.5" fill={`url(#strikeGrad${index})`}>
-                                                                <animate attributeName="cy" values="12;36;12" dur="3s" begin="0.5s" repeatCount="indefinite" />
-                                                                <animate attributeName="opacity" values="0;1;0" dur="3s" begin="0.5s" repeatCount="indefinite" />
-                                                            </circle>
-                                                            <circle cx="36" cy="24" r="1.5" fill={`url(#strikeGrad${index})`}>
-                                                                <animate attributeName="cx" values="36;12;36" dur="3s" begin="1s" repeatCount="indefinite" />
-                                                                <animate attributeName="opacity" values="0;1;0" dur="3s" begin="1s" repeatCount="indefinite" />
-                                                            </circle>
-                                                            <circle cx="24" cy="36" r="1.5" fill={`url(#strikeGrad${index})`}>
-                                                                <animate attributeName="cy" values="36;12;36" dur="3s" begin="1.5s" repeatCount="indefinite" />
-                                                                <animate attributeName="opacity" values="0;1;0" dur="3s" begin="1.5s" repeatCount="indefinite" />
+                                                            <circle cx="24" cy="24" r="3" fill="#fff" opacity="0.9">
+                                                                <animate attributeName="opacity" values="0.7;1;0.7" dur="1.5s" repeatCount="indefinite" />
                                                             </circle>
                                                             
-                                                            {/* Power surge lines */}
-                                                            <line x1="24" y1="24" x2="24" y2="6" stroke={`url(#strikeGrad${index})`} strokeWidth="2" opacity="0.4">
-                                                                <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2s" repeatCount="indefinite" />
+                                                            {/* Orbiting mystical particles */}
+                                                            <circle cx="24" cy="8" r="1.5" fill={`url(#strikeGrad${index})`}>
+                                                                <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" />
+                                                                <animateTransform attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="8s" repeatCount="indefinite" />
+                                                            </circle>
+                                                            <circle cx="40" cy="24" r="1.5" fill={`url(#strikeGrad${index})`}>
+                                                                <animate attributeName="opacity" values="0;1;0" dur="3s" begin="0.75s" repeatCount="indefinite" />
+                                                                <animateTransform attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="8s" repeatCount="indefinite" />
+                                                            </circle>
+                                                            <circle cx="24" cy="40" r="1.5" fill={`url(#strikeGrad${index})`}>
+                                                                <animate attributeName="opacity" values="0;1;0" dur="3s" begin="1.5s" repeatCount="indefinite" />
+                                                                <animateTransform attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="8s" repeatCount="indefinite" />
+                                                            </circle>
+                                                            <circle cx="8" cy="24" r="1.5" fill={`url(#strikeGrad${index})`}>
+                                                                <animate attributeName="opacity" values="0;1;0" dur="3s" begin="2.25s" repeatCount="indefinite" />
+                                                                <animateTransform attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="8s" repeatCount="indefinite" />
+                                                            </circle>
+                                                            
+                                                            {/* Connecting mystical lines */}
+                                                            <line x1="24" y1="10" x2="24" y2="18" stroke={`url(#strikeGrad${index})`} strokeWidth="1" opacity="0.5">
+                                                                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite" />
                                                             </line>
-                                                            <line x1="24" y1="24" x2="42" y2="24" stroke={`url(#strikeGrad${index})`} strokeWidth="2" opacity="0.4">
-                                                                <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2s" begin="0.5s" repeatCount="indefinite" />
+                                                            <line x1="38" y1="24" x2="30" y2="24" stroke={`url(#strikeGrad${index})`} strokeWidth="1" opacity="0.5">
+                                                                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" begin="0.5s" repeatCount="indefinite" />
                                                             </line>
-                                                            <line x1="24" y1="24" x2="24" y2="42" stroke={`url(#strikeGrad${index})`} strokeWidth="2" opacity="0.4">
-                                                                <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2s" begin="1s" repeatCount="indefinite" />
+                                                            <line x1="24" y1="38" x2="24" y2="30" stroke={`url(#strikeGrad${index})`} strokeWidth="1" opacity="0.5">
+                                                                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" begin="1s" repeatCount="indefinite" />
                                                             </line>
-                                                            <line x1="24" y1="24" x2="6" y2="24" stroke={`url(#strikeGrad${index})`} strokeWidth="2" opacity="0.4">
-                                                                <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2s" begin="1.5s" repeatCount="indefinite" />
+                                                            <line x1="10" y1="24" x2="18" y2="24" stroke={`url(#strikeGrad${index})`} strokeWidth="1" opacity="0.5">
+                                                                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" begin="1.5s" repeatCount="indefinite" />
                                                             </line>
                                                         </svg>
                                                     );
@@ -3427,26 +3417,78 @@ const AppWrapper = observer(() => {
                                                         </svg>
                                                     );
                                                 } else if (lowerName.includes('over') && lowerName.includes('rec')) {
+                                                    // Ascending Spiral Mandala
                                                     return (
                                                         <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <defs>
                                                                 <linearGradient id={`overGrad${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
-                                                                    <stop offset="0%" stopColor="#10b981" />
-                                                                    <stop offset="100%" stopColor="#059669" />
+                                                                    <stop offset="0%" stopColor="#fbbf24" />
+                                                                    <stop offset="50%" stopColor="#f97316" />
+                                                                    <stop offset="100%" stopColor="#d97706" />
                                                                 </linearGradient>
+                                                                <radialGradient id={`overRadial${index}`}>
+                                                                    <stop offset="0%" stopColor="#fbbf24" stopOpacity="0.5" />
+                                                                    <stop offset="100%" stopColor="#f97316" stopOpacity="0" />
+                                                                </radialGradient>
                                                             </defs>
-                                                            <path d="M8 32 L16 24 L24 28 L32 16 L40 20" stroke={`url(#overGrad${index})`} strokeWidth="3" fill="none" strokeLinecap="round">
-                                                                <animate attributeName="stroke-dasharray" values="0,100;100,0" dur="3s" repeatCount="indefinite" />
+                                                            
+                                                            {/* Mystical glow */}
+                                                            <circle cx="24" cy="24" r="20" fill={`url(#overRadial${index})`}>
+                                                                <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite" />
+                                                            </circle>
+                                                            
+                                                            {/* Outer rotating mandala */}
+                                                            <circle cx="24" cy="24" r="19" stroke={`url(#overGrad${index})`} strokeWidth="2" fill="none" strokeDasharray="5 3" opacity="0.7">
+                                                                <animateTransform attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="10s" repeatCount="indefinite" />
+                                                            </circle>
+                                                            
+                                                            {/* Spiral energy path */}
+                                                            <path d="M8 36 Q12 30, 16 28 Q20 26, 24 26 Q28 26, 32 22 Q36 18, 40 14" 
+                                                                stroke={`url(#overGrad${index})`} strokeWidth="2.5" fill="none" strokeLinecap="round">
+                                                                <animate attributeName="stroke-dasharray" values="0,100;100,0" dur="4s" repeatCount="indefinite" />
+                                                                <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite" />
                                                             </path>
-                                                            <circle cx="16" cy="24" r="3" fill={`url(#overGrad${index})`}>
-                                                                <animate attributeName="cy" values="24;20;24" dur="2s" repeatCount="indefinite" />
+                                                            
+                                                            {/* Ascending mystical nodes */}
+                                                            <circle cx="16" cy="28" r="3" fill={`url(#overGrad${index})`} opacity="0.9">
+                                                                <animate attributeName="cy" values="28;24;28" dur="2.5s" repeatCount="indefinite" />
+                                                                <animate attributeName="r" values="3;4;3" dur="2.5s" repeatCount="indefinite" />
                                                             </circle>
-                                                            <circle cx="24" cy="28" r="3" fill={`url(#overGrad${index})`}>
-                                                                <animate attributeName="cy" values="28;24;28" dur="2s" begin="0.3s" repeatCount="indefinite" />
+                                                            <circle cx="24" cy="26" r="3" fill={`url(#overGrad${index})`} opacity="0.9">
+                                                                <animate attributeName="cy" values="26;22;26" dur="2.5s" begin="0.4s" repeatCount="indefinite" />
+                                                                <animate attributeName="r" values="3;4;3" dur="2.5s" begin="0.4s" repeatCount="indefinite" />
                                                             </circle>
-                                                            <circle cx="32" cy="16" r="3" fill={`url(#overGrad${index})`}>
-                                                                <animate attributeName="cy" values="16;12;16" dur="2s" begin="0.6s" repeatCount="indefinite" />
+                                                            <circle cx="32" cy="22" r="3" fill={`url(#overGrad${index})`} opacity="0.9">
+                                                                <animate attributeName="cy" values="22;18;22" dur="2.5s" begin="0.8s" repeatCount="indefinite" />
+                                                                <animate attributeName="r" values="3;4;3" dur="2.5s" begin="0.8s" repeatCount="indefinite" />
                                                             </circle>
+                                                            
+                                                            {/* Inner rotating geometric pattern */}
+                                                            <circle cx="24" cy="24" r="12" stroke={`url(#overGrad${index})`} strokeWidth="1.5" fill="none" strokeDasharray="3 2" opacity="0.6">
+                                                                <animateTransform attributeName="transform" type="rotate" from="360 24 24" to="0 24 24" dur="6s" repeatCount="indefinite" />
+                                                            </circle>
+                                                            
+                                                            {/* Central mystical core */}
+                                                            <circle cx="24" cy="24" r="5" fill={`url(#overGrad${index})`} opacity="0.8">
+                                                                <animate attributeName="r" values="5;6;5" dur="2s" repeatCount="indefinite" />
+                                                            </circle>
+                                                            <circle cx="24" cy="24" r="2.5" fill="#fff" opacity="0.9">
+                                                                <animate attributeName="opacity" values="0.7;1;0.7" dur="1.5s" repeatCount="indefinite" />
+                                                            </circle>
+                                                            
+                                                            {/* Mystical energy trails */}
+                                                            <path d="M10 34 L14 30" stroke={`url(#overGrad${index})`} strokeWidth="1.5" strokeLinecap="round" opacity="0.5">
+                                                                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite" />
+                                                            </path>
+                                                            <path d="M18 26 L22 24" stroke={`url(#overGrad${index})`} strokeWidth="1.5" strokeLinecap="round" opacity="0.5">
+                                                                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" begin="0.4s" repeatCount="indefinite" />
+                                                            </path>
+                                                            <path d="M26 24 L30 20" stroke={`url(#overGrad${index})`} strokeWidth="1.5" strokeLinecap="round" opacity="0.5">
+                                                                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" begin="0.8s" repeatCount="indefinite" />
+                                                            </path>
+                                                            <path d="M34 20 L38 16" stroke={`url(#overGrad${index})`} strokeWidth="1.5" strokeLinecap="round" opacity="0.5">
+                                                                <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" begin="1.2s" repeatCount="indefinite" />
+                                                            </path>
                                                         </svg>
                                                     );
                                                 } else if (lowerName.includes('under 7') || lowerName.includes('under 5')) {
@@ -3803,7 +3845,7 @@ const AppWrapper = observer(() => {
                                         marginTop: '1rem',
                                     }}
                                 >
-                                    Premium Bots
+                                    Advanced Autobots
                                 </h2>
                                 <p
                                     style={{
@@ -3813,7 +3855,7 @@ const AppWrapper = observer(() => {
                                         textAlign: 'left',
                                     }}
                                 >
-                                    Exclusive premium strategies with advanced features
+                                    Next-generation automated trading systems
                                 </p>
                                 <div
                                     className='premium-bots-grid'
@@ -3826,7 +3868,7 @@ const AppWrapper = observer(() => {
                                 >
                                     {[
                                         { 
-                                            name: 'Novagrid 2026',
+                                            name: 'AUTO Over Under',
                                             xmlFile: 'NOVAGRID 2026.xml',
                                             icon: (
                                                 // Supernova / Cosmic Explosion
@@ -3922,16 +3964,12 @@ const AppWrapper = observer(() => {
                                                     </circle>
                                                 </svg>
                                             ), 
-                                            rate: 97,
-                                            price: '$1,099',
-                                            description: 'Ultimate AI-powered trading system with neural network analysis, real-time market adaptation, and premium 24/7 support'
+                                            rate: 97
                                         },
                                         { 
-                                            name: 'Novagrid Elite',
+                                            name: 'AUTO Even Odd',
                                             xmlFile: '🖤⚜️ 𝓣𝓱𝓮 𝓓𝓪𝓻𝓴 𝓓𝔂𝓷𝓪𝓼𝓽𝔂 ⚜️🖤2.xml',
                                             rate: 94,
-                                            price: '$499',
-                                            description: 'Elite trading strategy with advanced pattern recognition, precision execution, and professional-grade analytics',
                                             icon: (
                                                 // Spiral Galaxy
                                                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -4053,7 +4091,7 @@ const AppWrapper = observer(() => {
                                                     textTransform: 'uppercase',
                                                 }}
                                             >
-                                                Premium
+                                                Advanced
                                             </span>
 
                                             <div
@@ -4075,23 +4113,10 @@ const AppWrapper = observer(() => {
                                                     fontSize: '14px',
                                                     fontWeight: '600',
                                                     lineHeight: '1.4',
-                                                    minHeight: '2.8rem',
                                                 }}
                                             >
                                                 {bot.name}
                                             </h3>
-
-                                            <p
-                                                style={{
-                                                    margin: 0,
-                                                    color: '#6b7280',
-                                                    fontSize: '12px',
-                                                    lineHeight: '1.5',
-                                                    minHeight: '3rem',
-                                                }}
-                                            >
-                                                {bot.description}
-                                            </p>
 
                                             <div style={{ marginTop: '0.5rem' }}>
                                                 <div
@@ -4140,17 +4165,6 @@ const AppWrapper = observer(() => {
                                                     />
                                                 </div>
                                             </div>
-
-                                            <p
-                                                style={{
-                                                    margin: '0.5rem 0 0 0',
-                                                    color: '#1f2937',
-                                                    fontSize: '18px',
-                                                    fontWeight: '700',
-                                                }}
-                                            >
-                                                {bot.price}
-                                            </p>
 
                                             <button
                                                 onClick={() => {
