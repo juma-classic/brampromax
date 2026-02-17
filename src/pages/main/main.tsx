@@ -844,7 +844,10 @@ const AppWrapper = observer(() => {
     useEffect(() => {
         const fetchBots = async () => {
             const botFiles = [
-                // New Bots - Added First
+                // Newest Bots - Added First
+                'maziwa 2026.xml',
+                '2-poerverty keller.xml',
+                // New Bots
                 'AUTO Even Odd AI By Bram.xml',
                 'AUTO OVER AI by CEOBRAM.xml',
                 'BRAM SPEED BOT V6.xml',
