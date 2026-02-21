@@ -1274,3 +1274,20 @@ html:has(.main--fast-lane) {
         overflow-y: auto;
     }
 }
+
+// Hide drawer and adjust layout when on All Tools tab
+.main--hide-drawer {
+    .run-panel {
+        display: none !important;
+    }
+    
+    .main__run-strategy-wrapper {
+        display: none !important;
+    }
+    
+    // Expand content to full width when drawer is hidden
+    .main__container {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}

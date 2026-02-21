@@ -2394,12 +2394,13 @@ const AppWrapper = observer(() => {
         };
     }, [setActiveTab]);
 
-    // Always show run panel on all tabs
-    const showRunPanel = true;
+    // Hide run panel and drawer on All Tools tab
+    const showRunPanel = active_tab !== DBOT_TABS.ALL_TOOLS;
+    const hideDrawer = active_tab === DBOT_TABS.ALL_TOOLS;
 
     return (
         <>
-            <div className='main'>
+            <div className={classNames('main', { 'main--hide-drawer': hideDrawer })}>
                 <div className='main__container'>
                     <Tabs
                         active_index={active_tab}
@@ -4714,7 +4715,7 @@ const AppWrapper = observer(() => {
                 </div>
             </div>
             <DesktopWrapper>
-                <div className='main__run-strategy-wrapper'>
+                <div className='main__run-strategy-wrapper' style={{ display: showRunPanel ? 'block' : 'none' }}>
                     <RunStrategy />
                     {showRunPanel && <RunPanel />}
                 </div>
@@ -4722,7 +4723,7 @@ const AppWrapper = observer(() => {
                 <TradingViewModal />
             </DesktopWrapper>
             <MobileWrapper>
-                <RunPanel />
+                {showRunPanel && <RunPanel />}
             </MobileWrapper>
             <Dialog
                 cancel_button_text={cancel_button_text || localize('Cancel')}
