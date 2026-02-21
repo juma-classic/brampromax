@@ -4646,68 +4646,6 @@ const AppWrapper = observer(() => {
                             </div>
                         </div>
 
-                        {/* ADVANCE ANALYSIS TAB */}
-                        <div
-                            label={
-                                <>
-                                    <svg
-                                        width='31.2'
-                                        height='31.2'
-                                        viewBox='0 0 24 24'
-                                        fill='none'
-                                        xmlns='http://www.w3.org/2000/svg'
-                                    >
-                                        <defs>
-                                            <linearGradient id='advanceGrad' x1='0%' y1='0%' x2='100%' y2='100%'>
-                                                <stop offset='0%' stopColor='#3b82f6' />
-                                                <stop offset='100%' stopColor='#8b5cf6' />
-                                            </linearGradient>
-                                        </defs>
-                                        <path
-                                            d='M3 3v18h18'
-                                            stroke='url(#advanceGrad)'
-                                            strokeWidth='2'
-                                            strokeLinecap='round'
-                                        />
-                                        <path
-                                            d='M7 14l4-4 3 3 5-5'
-                                            stroke='url(#advanceGrad)'
-                                            strokeWidth='2'
-                                            strokeLinecap='round'
-                                            strokeLinejoin='round'
-                                        />
-                                        <circle cx='7' cy='14' r='1.5' fill='#3b82f6' />
-                                        <circle cx='11' cy='10' r='1.5' fill='#6366f1' />
-                                        <circle cx='14' cy='13' r='1.5' fill='#8b5cf6' />
-                                        <circle cx='19' cy='8' r='1.5' fill='#a855f7' />
-                                    </svg>
-                                    <Localize i18n_default_text='Advance Analysis' />
-                                </>
-                            }
-                            id='id-advance-analysis'
-                        >
-                            <div
-                                style={{
-                                    width: '100%',
-                                    height: 'calc(100vh - 120px)',
-                                    minHeight: 'calc(100vh - 120px)',
-                                    overflow: 'hidden',
-                                }}
-                            >
-                                <iframe
-                                    src='https://bot-analysis-tool-belex.web.app'
-                                    title='Advance Analysis Tool'
-                                    style={{
-                                        width: '100%',
-                                        height: '100%',
-                                        border: 'none',
-                                        display: 'block',
-                                    }}
-                                    allow='clipboard-read; clipboard-write'
-                                />
-                            </div>
-                        </div>
-
                         {/* STATES FX ZONE TAB - MOVED TO ANALYSIS TOOL */}
 
                         {/* TICKSHARK TAB - MOVED TO ANALYSIS TOOL */}
