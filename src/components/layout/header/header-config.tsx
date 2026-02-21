@@ -83,6 +83,30 @@ export const MenuItems: MenuItemsConfig[] = [
     },
     {
         as: 'a',
+        href: '/pro-analysis',
+        icon: <ReportsLogo iconSize='xs' />,
+        label: localize('Pro Analysis'),
+    },
+    {
+        as: 'a',
+        href: '/signals-tracker',
+        icon: <ReportsLogo iconSize='xs' />,
+        label: localize('Signals Tracker'),
+    },
+    {
+        as: 'a',
+        href: '/quick-analyser',
+        icon: <ReportsLogo iconSize='xs' />,
+        label: localize('Quick Analyser'),
+    },
+    {
+        as: 'a',
+        href: '/alltools/index.html',
+        icon: <ReportsLogo iconSize='xs' />,
+        label: localize('All Tools'),
+    },
+    {
+        as: 'a',
         href: standalone_routes.reports,
         icon: <ReportsLogo iconSize='xs' />,
         label: localize('Reports'),

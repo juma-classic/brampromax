@@ -74,6 +74,11 @@ const NovaAnalysisPage = lazy(() => import('../pages/nova-analysis-page').then(m
 // Copy Trading Page
 const CopyTradingPage = lazy(() => import('../pages/copy-trading-page').then(m => ({ default: m.default })));
 
+// Tool Pages (iframe wrappers)
+const ProAnalysis = lazy(() => import('../pages/pro-analysis').then(m => ({ default: m.default })));
+const SignalsTracker = lazy(() => import('../pages/signals-tracker').then(m => ({ default: m.default })));
+const QuickAnalyser = lazy(() => import('../pages/quick-analyser').then(m => ({ default: m.default })));
+
 const { TRANSLATIONS_CDN_URL, R2_PROJECT_NAME, CROWDIN_BRANCH_NAME } = process.env;
 const i18nInstance = initializeI18n({
     cdnUrl: `${TRANSLATIONS_CDN_URL}/${R2_PROJECT_NAME}/${CROWDIN_BRANCH_NAME}`,
@@ -137,6 +142,11 @@ const router = createBrowserRouter(
 
             {/* Copy Trading Page */}
             <Route path='copy-trading' element={<CopyTradingPage />} />
+
+            {/* Tool Pages (iframe wrappers) */}
+            <Route path='pro-analysis' element={<ProAnalysis />} />
+            <Route path='signals-tracker' element={<SignalsTracker />} />
+            <Route path='quick-analyser' element={<QuickAnalyser />} />
 
             {/* Phase 1 Demo Routes */}
             <Route path='live-signals-demo' element={<LiveSignalsDemo />} />

@@ -799,6 +799,24 @@ const FreeBotsIcon = () => (
     </svg>
 );
 
+const AllToolsIcon = () => (
+    <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <defs>
+            <linearGradient id='toolsGrad' x1='0%' y1='0%' x2='100%' y2='100%'>
+                <stop offset='0%' stopColor='#3b82f6' />
+                <stop offset='100%' stopColor='#8b5cf6' />
+            </linearGradient>
+        </defs>
+        {/* Wrench */}
+        <path d='M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z' stroke='url(#toolsGrad)' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' fill='none'/>
+        {/* Screwdriver */}
+        <path d='M3 3l3 3M7 7l-4 4M11 11l4-4' stroke='url(#toolsGrad)' strokeWidth='1.5' strokeLinecap='round' opacity='0.7'/>
+        {/* Gear */}
+        <circle cx='18' cy='18' r='3' stroke='url(#toolsGrad)' strokeWidth='1.5' fill='none' opacity='0.8'/>
+        <circle cx='18' cy='18' r='1' fill='url(#toolsGrad)'/>
+    </svg>
+);
+
 const AppWrapper = observer(() => {
     const { connectionStatus } = useApiBase();
     const { dashboard, load_modal, run_panel, summary_card } = useStore();
@@ -2391,8 +2409,17 @@ const AppWrapper = observer(() => {
                         top
                     >
                         {/* Note: Tab order matches DBOT_TABS indices in bot-contents.ts */}
-                        {/* 0. FREE BOTS TAB - Will be moved here from line 2557 */}
-                        {/* 0. BOT BUILDER TAB */}
+                        {/* 0. DASHBOARD TAB */}
+                        <div
+                            label={
+                                <>
+                                    <DashboardIcon />
+                                    <Localize i18n_default_text='Dashboard' />
+                                </>
+                            }
+                            id='id-dbot-dashboard'
+                        />
+                        {/* 1. BOT BUILDER TAB */}
                         <div
                             label={
                                 <>
@@ -2405,17 +2432,7 @@ const AppWrapper = observer(() => {
                             <Dashboard handleTabChange={setActiveTab} />
                             <button onClick={handleOpen}>Load Bot</button>
                         </div>
-                        {/* 1. DASHBOARD TAB */}
-                        <div
-                            label={
-                                <>
-                                    <DashboardIcon />
-                                    <Localize i18n_default_text='Dashboard' />
-                                </>
-                            }
-                            id='id-dbot-dashboard'
-                        />
-                        {/* 3. CHARTS TAB */}
+                        {/* 2. CHARTS TAB */}
                         <div
                             label={
                                 <>
@@ -4434,6 +4451,39 @@ const AppWrapper = observer(() => {
                                         }
                                     `}
                                 </style>
+                            </div>
+                        </div>
+
+                        {/* ALL TOOLS TAB */}
+                        <div
+                            label={
+                                <>
+                                    <AllToolsIcon />
+                                    <Localize i18n_default_text='All Tools' />
+                                </>
+                            }
+                            id='id-all-tools'
+                        >
+                            <div
+                                style={{
+                                    position: 'fixed',
+                                    top: '120px',
+                                    left: 0,
+                                    right: 0,
+                                    bottom: '100px',
+                                    width: '100%',
+                                    height: 'calc(100vh - 220px)',
+                                }}
+                            >
+                                <iframe
+                                    src='/alltools/index.html'
+                                    title='All Tools - Trading Tools Hub'
+                                    style={{
+                                        width: '100%',
+                                        height: '100%',
+                                        border: 'none',
+                                    }}
+                                />
                             </div>
                         </div>
 

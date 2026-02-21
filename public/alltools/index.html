@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trading Tools Hub</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .dropdown-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: #1abc9c;
+            color: white;
+            padding: 8px 14px;
+            font-size: 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #222;
+            min-width: 180px;
+            border-radius: 4px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .dropdown-content button {
+            width: 100%;
+            background-color: transparent;
+            color: white;
+            border: none;
+            text-align: left;
+            padding: 10px 14px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .dropdown-content button:hover {
+            background-color: #1abc9c;
+        }
+
+        .iframe-wrapper {
+            flex: 1;
+            position: relative;
+            height: 100vh;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .spinner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(17, 17, 17, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            display: none;
+        }
+
+        .spinner {
+            border: 5px solid #333;
+            border-top: 5px solid #1abc9c;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .dropbtn {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+            .dropdown-content button {
+                font-size: 12px;
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Dropdown Menu (Right Side) -->
+    <div class="dropdown-container">
+        <div class="dropdown" id="toolsDropdown">
+            <button class="dropbtn" id="toolsButton">Tools ▾</button>
+            <div class="dropdown-content" id="dropdownContent">
+                <button data-url="https://bot-analysis-tool-belex.web.app/">Pro Analysis</button>
+                <button data-url="https://tracktool.netlify.app/signals.html">Signals</button>
+                <button data-url="https://mrdukehack.netlify.app/">Quick Analyser </button>
+                <!-- Add more tool buttons here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Iframe Display Area -->
+    <div class="iframe-wrapper">
+        <div class="spinner-overlay" id="spinnerOverlay">
+            <div class="spinner"></div>
+        </div>
+        <iframe id="toolFrame" src="https://bot-analysis-tool-belex.web.app/"></iframe>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll('.dropdown-content button');
+        const iframe = document.getElementById('toolFrame');
+        const spinner = document.getElementById('spinnerOverlay');
+        const dropdownContent = document.getElementById('dropdownContent');
+        const toolsButton = document.getElementById('toolsButton');
+
+        let spinnerTimeout;
+
+        function showSpinner() {
+            clearTimeout(spinnerTimeout);
+            spinner.style.display = 'flex';
+            // Ensure it hides in 2 seconds max, even if iframe doesn't fire load
+            spinnerTimeout = setTimeout(() => {
+                hideSpinner();
+            }, 2000);
+        }
+
+        function hideSpinner() {
+            spinner.style.display = 'none';
+            clearTimeout(spinnerTimeout);
+        }
+
+        function closeDropdown() {
+            dropdownContent.style.display = 'none';
+        }
+
+        toolsButton.addEventListener('click', () => {
+            const isVisible = dropdownContent.style.display === 'block';
+            dropdownContent.style.display = isVisible ? 'none' : 'block';
+        });
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const url = button.getAttribute('data-url');
+                showSpinner();
+                iframe.src = url;
+                closeDropdown();
+            });
+        });
+
+        iframe.addEventListener('load', hideSpinner);
+
+        // Show spinner on initial load, but hide after 2s max
+        window.addEventListener('load', () => {
+            showSpinner();
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('toolsDropdown');
+            if (!dropdown.contains(event.target)) {
+                closeDropdown();
+            }
+        });
+    </script>
+</body>
+
+</html>
