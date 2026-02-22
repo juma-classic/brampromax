@@ -865,6 +865,9 @@ const AppWrapper = observer(() => {
                 // Newest Bots - Added First
                 'maziwa 2026.xml',
                 '2-poerverty keller.xml',
+                'Over 2 Over 4 raptor.xml',
+                'UNDER 7 and UNDER 5.xml',
+                'UNDER 8 UNDER 6 hunter.xml',
                 // New Bots
                 'AUTO Even Odd AI By Bram.xml',
                 'AUTO OVER AI by CEOBRAM.xml',
