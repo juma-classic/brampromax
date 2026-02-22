@@ -916,7 +916,7 @@ const AppWrapper = observer(() => {
 
             console.log('🤖 Loading bot:', bot.title);
 
-            setActiveTab(DBOT_TABS.DASHBOARD);
+            setActiveTab(DBOT_TABS.BOT_BUILDER);
 
             // Validate load_modal exists and has the required method
             if (!load_modal) {
@@ -2419,7 +2419,9 @@ const AppWrapper = observer(() => {
                                 </>
                             }
                             id='id-dbot-dashboard'
-                        />
+                        >
+                            <Dashboard handleTabChange={setActiveTab} />
+                        </div>
                         {/* 1. BOT BUILDER TAB */}
                         <div
                             label={
@@ -2430,7 +2432,6 @@ const AppWrapper = observer(() => {
                             }
                             id='id-bot-builder'
                         >
-                            <Dashboard handleTabChange={setActiveTab} />
                             <button onClick={handleOpen}>Load Bot</button>
                         </div>
                         {/* 2. CHARTS TAB */}
