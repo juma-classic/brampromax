@@ -4,6 +4,7 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import ChunkLoader from '@/components/loader/chunk-loader';
 import RoutePromptDialog from '@/components/route-prompt-dialog';
 import { CommunityModal } from '@/components/community-modal';
+import { RiskDisclaimer } from '@/components/risk-disclaimer';
 import { StoreProvider } from '@/hooks/useStore';
 import CallbackPage from '@/pages/callback';
 import Endpoint from '@/pages/endpoint';
@@ -267,6 +268,7 @@ function App() {
             <RouterProvider router={router} />
             <Analytics />
             <SpeedInsights />
+            <RiskDisclaimer />
             {showCommunityModal && <CommunityModal onClose={() => setShowCommunityModal(false)} />}
         </>
     );
